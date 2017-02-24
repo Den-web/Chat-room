@@ -133,12 +133,31 @@
             public function InsertChatMessage(){
                 include "conn.php";
 
-                $req=$bdd->prepare("INSERT INTO chats(ChatUserId,ChatText) VALUES(:ChatUserId,:ChatText)");
+                $req=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatUserId,:ChatText)");
                 $req->execute(array(
                     'ChatUserId'=>$this->getChatUserId(),
                     'ChatText'=>$this->getChatText()
                 ));
             }
+
+            public function EditChatMessage(){
+                include "conn.php";
+
+                $req=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatText)");
+                $req->execute(array(
+                    'ChatText'=>$this->getChatText()
+                ));
+            }
+
+            public function DeleteChatMessage(){
+                include "conn.php";
+
+                $req=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatText)");
+                $req->execute(array(
+                    'ChatText'=>$this->getChatText()
+                ));
+            }
+
 
             public function DisplayMessage(){
                 include "conn.php";
@@ -153,11 +172,21 @@
                    ));
                    $Datauser = $UserReq->fetch();
                    ?>
-                    <span class="UserNameS"> <?php echo $Datauser['UserName'];  ?></span><br>
-                    <span class="ChatMessageS"><?php echo $DataChat['ChatText']; ?></span>
+                    <div>
+                        <span class="UserNameS"> <?php echo $Datauser['UserName'];  ?></span><br>
+                        <span class="ChatMessageS"><?php echo $DataChat['ChatText']; ?></span><br>
+
+                        <a href="EditChatMessage.php?edit=1">Edit</a>
+                        <a href="DeleteChatMessage.php?delete=1">Delete</a>
+                        <hr>
+                    </div>
+
                     <?php
                }
             }
+
+
+
 
     }
 

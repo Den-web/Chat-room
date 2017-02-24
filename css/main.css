@@ -11,8 +11,10 @@
 
 }
 .ChatMessageS{
+    content: '-';
+    background: #cccccc;
     color: #080808;
-    padding: 5px;
+    margin: 10px;
     font: 14px sans-serif;
     text-shadow: 2px 2px 2px #fff, 2px 2px 2px rgba(0,0,0,0.15);
 }
@@ -21,6 +23,6 @@
     width: 360px; /* Ширина блока */
     height: 500px; /* Высота блока */
     padding: 10px; /* Поля вокруг текста */
-    margin:20px 0;
+    margin: 20px 0;
     border: solid 2px black; /* Параметры рамки */
 }
