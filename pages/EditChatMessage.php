@@ -7,3 +7,7 @@
  */
 
     include "classes.php";
+
+//    $select = " from chats WHERE ChatId='" .$_GET['del_id']."'";
+//    $query = mysqli_query($bdd, $select) or die($select);
+//    header("Location+: Home.php");

@@ -43,7 +43,7 @@
                     <h2 class="text-center">Welcome to Chat Box<span style="color:green"><?php $_SESSION['UserName']; ?></span></h2>
 
                     <div id="ChatBig">
-                        <h3>Chat Block</h3>
+                        <h3 class="text-center">Chat Block</h3>
                         <div id="ChatMessages">
                         </div>
                         <div class="form-group">

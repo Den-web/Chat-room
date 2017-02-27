@@ -1,8 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Den
- * Date: 24.02.2017
- * Time: 23:26
- */
+
     include "classes.php";
+
+//    $select = "DELETE from chats WHERE ChatId='" .$_GET['edit_id']."'";
+//    $query = mysqli_query($bdd, $select) or die($select);
+//    header("Location: Home.php");

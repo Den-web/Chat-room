@@ -143,8 +143,8 @@
             public function EditChatMessage(){
                 include "conn.php";
 
-                $req=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatText)");
-                $req->execute(array(
+                $edit=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatText)");
+                $edit->execute(array(
                     'ChatText'=>$this->getChatText()
                 ));
             }
@@ -152,9 +152,9 @@
             public function DeleteChatMessage(){
                 include "conn.php";
 
-                $req=$bdd->prepare("INSERT INTO chats(ChatText) VALUES(:ChatText)");
-                $req->execute(array(
-                    'ChatText'=>$this->getChatText()
+                $delete=$bdd->prepare("INSERT INTO chats(ChatId) VALUES(:ChatId)");
+                $delete->execute(array(
+                    'ChatId'=>$this->getChatId()
                 ));
             }
 
@@ -162,7 +162,7 @@
             public function DisplayMessage(){
                 include "conn.php";
 
-                $ChatReg=$bdd->prepare("SELECT * FROM chats ORDER BY ChatId DESC");
+                $ChatReg=$bdd->prepare("DELETE FROM chats ORDER BY ChatId");
                 $ChatReg->execute();
 
                while($DataChat = $ChatReg->fetch()){
@@ -176,17 +176,14 @@
                         <span class="UserNameS"> <?php echo $Datauser['UserName'];  ?></span><br>
                         <span class="ChatMessageS"><?php echo $DataChat['ChatText']; ?></span><br>
 
-                        <a href="EditChatMessage.php?edit=1">Edit</a>
-                        <a href="DeleteChatMessage.php?delete=1">Delete</a>
+                        <input type="button" value="edit" href="EditChatMessage.php?edit=1" onclick="return confirm('Are you sure want to edit?')" />
+                        <input type="button" value="delete" href="DeleteChatMessage.php?delete=1" onclick="return confirm('Are you sure want to delete?')" />
                         <hr>
                     </div>
 
                     <?php
                }
             }
-
-
-
 
     }
 
