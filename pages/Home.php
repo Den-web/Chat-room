@@ -29,7 +29,7 @@
 
                 setInterval(function () { //Refresh Every 1500ms
                     $("ChatMessages").load("DisplayMessage.php");
-                }),1500;
+                },1500);
 
                 $("#ChatMessages").load("DisplayMessages.php");
 
@@ -40,7 +40,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <h2 class="text-center">Welcome to Chat Box<span style="color:green"><?php $_SESSION['UserName']; ?></span></h2>
+                    <h2 class="text-center">Welcome to Chat Box<span style="color:green">
+                            <?php echo $_SESSION['UserName']; ?>
+                        </span></h2>
 
                     <div id="ChatBig">
                         <h3>Chat Block</h3>
